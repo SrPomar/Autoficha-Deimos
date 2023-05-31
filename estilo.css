@@ -1,0 +1,108 @@
+body {
+    background-color: rgb(63, 63, 63);
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+header {
+    background-color: black;
+    height:2em;
+    padding: 0.5em;
+    color: white
+}
+
+header button {
+    margin: 0.5%;
+}
+
+#statblock {
+    width: 35%;
+    height: 100%;
+    margin: 0;
+    padding: 0%;
+    float:left;
+}
+
+.stat {
+    width: 98.5%;
+    margin: 1% 0% 0% 1.5%; 
+    float: left;
+    table-layout: fixed;
+    color:white;
+    font-weight: lighter;
+}
+
+.sum {
+    border: none !important
+}
+
+.stat th, .stat td {
+    border: 2px solid white;
+    padding: 1%;
+}
+
+.skills {
+    width: 90%;
+    margin: 0.5% 0% 1% 10%;
+    float: left;
+    color:white;
+}
+.skills th, .skills td {
+    border: 2px solid white;
+    margin: 0;
+    padding: 1%;
+}
+
+.statdisplay {
+    font-size: 1.4em;
+    border: 2px solid white;
+    font-weight: bold;
+    width: 100%;
+
+}
+
+.statdisplay td {
+    width: 50%;
+}
+
+#cardiogram {
+    width:25%;
+    height: auto;
+    background-color: rgb(163, 163, 255);
+    margin: 0;
+    padding: 0%;
+    display:inline-block
+}
+
+#sideDisplay {
+    width:40%;
+    height: auto;
+    background-color: rgb(171, 179, 156);
+    margin: 0;
+    padding: 0%;
+    float:right;
+}
+
+p {margin: 5%;}
+
+b {font-weight:bolder;}
+
+#tooltip {
+    z-index: 2;
+    width: 200px;
+    height: 200px;
+    background-color: bisque;
+    display: none;
+    position: absolute;
+}
+
+.receptacle {
+    display: none;
+}
+
+#newCharForm {
+    z-index: 3;
+    position: absolute;
+    display: block;
+}
