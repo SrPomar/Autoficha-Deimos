@@ -32,7 +32,7 @@ importChar = () => {
 
 startupLoader = () => {
     if (localStorage.getItem("personaje") != null) {
-        personaje = JSON.stringify(localStorage.getItem("personaje"));
+        personaje = JSON.parse(localStorage.getItem("personaje"));
         console.log("Se ha importado a "+personaje.nombre+" desde almacenamiento local")
         console.log(personaje)
     }
@@ -284,17 +284,17 @@ setDisplay = (id) => {
         document.getElementById(elementList[i]).style.display = "none"
     }
 
-    document.getElementById(id).style.display = "inline"
+    document.getElementById(id).style.display = "block"
 }
 
 DisplayReceptacle = (id) => {
-    let tabIDs = ["00","01","02","03", "10","11","12","13", "20","21","22","23", "30","31","32","33", "40","41","42", "50","51","52", "60","61","62", "70", "80"]
+    let tabIDs = ["00","01","02","03", "10","11","12","13", "20","21","22","23", "30","31","32","33", "40","41","42", "50","51","52", "60","61","62", "77", "88"]
 
     for (i = 0; i < tabIDs.length; i++) {
         document.getElementById(tabIDs[i]).style.display = "none"
     }
 
-    document.getElementById(id).style.display = "inline"
+    document.getElementById(id).style.display = "block"
 }
 
 updateView = () => {
@@ -306,7 +306,9 @@ updateView = () => {
     document.getElementById("estrellas").innerHTML = personaje.mvpp[0]+"☆"
     document.getElementById("xp").value = personaje.exp[0]
     document.getElementById("notas").value = personaje.notas
+    document.getElementById("inventario").rows[1].cells[1].innerHTML = "<b>"+personaje.inventario[0]+"</b>"
     setInventory();
+    buttonUpdater();
 }
 
 setXP = () => {

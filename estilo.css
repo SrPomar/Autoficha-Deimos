@@ -99,10 +99,25 @@ b {font-weight:bolder;}
 
 .receptacle {
     display: none;
+    width: 80%;
 }
 
-#newCharForm {
-    z-index: 3;
-    position: absolute;
+.receptacle td {
+    max-width: 20%;
+}
+
+.receptacle img {
+    max-width: 100%;
+}
+
+#pasaporte {
     display: block;
+}
+
+#pasaporte td {
+    width: 33%;
+}
+
+#pasaporte img {
+    max-width: 100%;
 }
