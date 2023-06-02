@@ -19,15 +19,23 @@ webhook = (content, ...embeds) => {
 }
 
 backupChar = () => {
+    var spacedString = personaje
+    console.log(spacedString)
+    spacedString.avatar += " "
+    console.log(spacedString.avatar)
     var embed = {
         title: "Copia de seguridad de " + personaje.nombre,
-        description: JSON.stringify(personaje),
+        description: JSON.stringify(spacedString),
+        thumbnail: {url: personaje.avatar}
     }
     webhook("", embed)
 }
 
 importChar = () => {
-    personaje = JSON.parse(prompt("Introduce el JSON con la copia de seguridad de tu personaje"))
+    var imported = JSON.parse(prompt("Introduce el JSON con la copia de seguridad de tu personaje"))
+    imported.avatar = imported.avatar.trim()
+    if (imported != null) {personaje = imported}
+    updateView()
 }
 
 startupLoader = () => {
