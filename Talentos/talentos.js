@@ -976,10 +976,72 @@ var  talents = [ //INVESTIGACIÓN
        buyTalent(this)
     },
     onClick: function() {
-        lanzarDados(personaje.atr.per, personaje.hab.disparar, 'Disparar (con Profesional)', 0, 2)
         shareEmbed(this)
     }
     },
+
+    {nombre: "Perceptividad",
+    texto: "Puedes saber el estrés y las heridas restantes de las personas a las que puedes ver",
+    icono: "https://i.imgur.com/Ez1eZ3d.png",
+    tipo: "talento",
+    id: "2004",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Manipulador compulsivo",
+    texto: "Obtienes un éxito adicional en tus tiradas para intentar seducir.",
+    icono: "https://i.imgur.com/5bWD5Hw.png",
+    tipo: "talento",
+    id: "2013",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Ponerte en su lugar",
+    texto: "Puedes gastar Concentración para adivinar las intenciones de los combatientes que puedas ver hasta el inicio de tu siguiente turno",
+    icono: "https://i.imgur.com/bi9mr4g.png",
+    tipo: "talento",
+    id: "2024",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+    
+    {nombre: "Estoy en tu cabeza",
+    texto: "Ponerte en su lugar también te permite adivinar las intenciones de naves que puedas detectar",
+    icono: "https://i.imgur.com/XLn1fhp.png",
+    tipo: "talento",
+    id: "2033",
+    prereqs: [5, "2024"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    //OBSERVAR
 ]
 
 var arrows = []
