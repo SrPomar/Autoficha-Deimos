@@ -106,12 +106,6 @@ ArrowUpdater = () => {
 
 }
 
-receptacleUpdater = () => {
-    for (i = 0; i < talents.length; i++) {
-
-    }
-}
-
 tooltipHandler = (talent) => {
     var cursor = [event.clientX, event.clientY]
 
@@ -875,14 +869,14 @@ var  talents = [ //INVESTIGACIÓN
     },
 
     {nombre: "Mercenario",
-    texto: "Elige un tipo de arma cuerpo a cuerpo que considerar predilecta. Al empuñar ese tipo de arma, podrás hacer uso de habilidades especiales que dependerán del tipo de arma.",
+    texto: "Obtienes una especialización con un tipo de arma cuerpo a cuerpo a tu elección.",
     icono: "https://i.imgur.com/vyQWRQ9.png",
     tipo: "talento",
     id: "1231",
     prereqs: [5],
     coste: 5,
     onBuy: function() {
-       buyTalent(this)
+        if(buyTalent(this)) {addToArray(1)}
     },
     onClick: function() {
         shareEmbed(this)
@@ -1197,8 +1191,97 @@ var  talents = [ //INVESTIGACIÓN
     }
     },
 
-    //DISPARAR
 
+    //DISPARAR
+    {nombre: "Aficionado",
+    texto: "Obtienes una especialización con un tipo de arma de disparo a tu elección.",
+    icono: "https://i.imgur.com/C4a4TNU.png",
+    tipo: "talento",
+    id: "2301",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+        if(buyTalent(this)) {addToArray(1)}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Entusiasta",
+    texto: "Obtienes una especialización con un tipo de arma de disparo a tu elección.",
+    icono: "https://i.imgur.com/KZSM4Su.png",
+    tipo: "talento",
+    id: "2311",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+        if(buyTalent(this)) {addToArray(1)}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Exmilitar",
+    texto: "Obtienes una especialización con un tipo de arma de disparo a tu elección.",
+    icono: "https://i.imgur.com/CFEXyxZ.png",
+    tipo: "talento",
+    id: "2321",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+        if(buyTalent(this)) {addToArray(1)}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Estadounidense",
+    texto: "Obtienes una especialización con un tipo de arma de disparo a tu elección.",
+    icono: "https://i.imgur.com/Z3hU5Bd.png",
+    tipo: "talento",
+    id: "2331",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+        if(buyTalent(this)) {addToArray(1)}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Arma predilecta",
+    texto: "Elige un tipo de arma de disparo que considerar predilecta. Al empuñar ese tipo de arma, podrás hacer uso de habilidades especiales que dependerán del tipo de arma.",
+    icono: "https://i.imgur.com/sJKY5nj.png",
+    tipo: "talento",
+    id: "2314",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+        buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Flexibilidad operacional",
+    texto: "Puedes elegir un segundo tipo de arma como arma predilecta.",
+    icono: "https://i.imgur.com/v2uiQUJ.png",
+    tipo: "talento",
+    id: "2334",
+    prereqs: [5, "2314"],
+    coste: 5,
+    onBuy: function() {
+        buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
 ]
 
 var arrows = []
