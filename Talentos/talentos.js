@@ -1042,6 +1042,160 @@ var  talents = [ //INVESTIGACIÓN
 
 
     //OBSERVAR
+    {nombre: "Ojo avizor",
+    texto: "Aumenta tu alcance de visión en 1",
+    icono: "https://i.imgur.com/8979cQl.png",
+    tipo: "talento",
+    id: "2101",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       if(buyTalent(this)) {personaje.sec.vision[1]++}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Oteador",
+    texto: "Durante las crisis, tu línea de visión es visible para todos tus compañeros",
+    icono: "https://i.imgur.com/jaQMGIA.png",
+    tipo: "talento",
+    id: "2113",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Cálculo visual",
+    texto: "Algunas de tus tiradas de investigación proporcionarán información contextual adicional.",
+    icono: "https://i.imgur.com/WOfWACW.png",
+    tipo: "talento",
+    id: "2114",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Ojo de halcón",
+    texto: "Aumenta tu alcance de visión en 2",
+    icono: "https://i.imgur.com/3moKNLI.png",
+    tipo: "talento",
+    id: "2121",
+    prereqs: [4, "2101"],
+    coste: 5,
+    onBuy: function() {
+       if(buyTalent(this)) {personaje.sec.vision[1]+=2}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Omniscencia",
+    texto: "Aumenta tu ángulo de visión en 45º.",
+    icono: "https://i.imgur.com/SaHDCrL.png",
+    tipo: "talento",
+    id: "2131",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+       if (buyTalent(this)) {personaje.sec.vision[0] += 45}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    //ESCUCHAR
+    {nombre: "Psicoanalista",
+    texto: "Obtienes un éxito adicional en tus tiradas de Perspicacia tras escuchar a alguien durante unos minutos.",
+    icono: "https://i.imgur.com/2u4k2D7.png",
+    tipo: "talento",
+    id: "2203",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Oído para chismes",
+    texto: "De vez en cuando tu instinto te indicará que se está produciendo una conversación interesante al alcance de tu oído.",
+    icono: "https://i.imgur.com/5TiOg8V.png",
+    tipo: "talento",
+    id: "2211",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Oído puesto",
+    texto: "Además de tu cono de visión frontal, obtienes 3 UAM de visión a 360º.",
+    icono: "https://i.imgur.com/S60ezJl.png",
+    tipo: "talento",
+    id: "2214",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Mimetismo",
+    texto: "Puedes realizar una tirada de escuchar para intentar copiar la jerga de tu interlocutor.",
+    icono: "https://i.imgur.com/6K8d2Yo.png",
+    tipo: "talento",
+    id: "2222",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Sismología",
+    texto: "Como acción larga, puedes gastar un punto de concentración para pegar la oreja al suelo hasta tu siguiente turno, lo que cuenta como cubrirse y además te permite detectar y ubicar movimientos en un radio de 20 UAM.",
+    icono: "https://i.imgur.com/ibWjabp.png",
+    tipo: "talento",
+    id: "2234",
+    prereqs: [5, "2214"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    //DISPARAR
+    
 ]
 
 var arrows = []
