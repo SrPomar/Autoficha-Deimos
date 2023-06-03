@@ -92,6 +92,9 @@ buttonUpdater = () => {
         }
         if (status == 2) { //locked
             button.style.filter = "grayscale(1)"
+            button.style.border = ""
+            button.style.removeProperty("borderRadius")
+            button.removeAttribute("onClick")
         }
     }
 }
@@ -1195,7 +1198,7 @@ var  talents = [ //INVESTIGACIÓN
     },
 
     //DISPARAR
-    
+
 ]
 
 var arrows = []
