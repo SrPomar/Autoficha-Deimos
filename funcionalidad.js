@@ -310,7 +310,7 @@ updateView = () => {
     disableButtons();
     setRS();
     setPassport();
-    receptacleUpdater();
+    //receptacleUpdater();
     document.getElementById("estrellas").innerHTML = personaje.mvpp[0]+"☆"
     document.getElementById("xp").value = personaje.exp[0]
     document.getElementById("notas").value = personaje.notas
