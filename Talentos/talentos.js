@@ -107,12 +107,14 @@ ArrowUpdater = () => {
 }
 
 tooltipHandler = (talent) => {
-    var cursor = [event.clientX, event.clientY]
-
+    var cursor = [event.pageX, event.pageY]
+    var tooltip = document.getElementById("tooltip")
 
     document.getElementById("tth3").innerHTML = talent.nombre
     document.getElementById("ttp").innerHTML = talent.texto
-    document.getElementById("tooltip").style.display = "inline"
+    tooltip.style.left = cursor[0]+"px"
+    tooltip.style.top = cursor[1]+"px"
+    tooltip.style.display = "inline"
 }
 
 hideTooltip = () => {
@@ -1277,6 +1279,373 @@ var  talents = [ //INVESTIGACIÓN
     coste: 5,
     onBuy: function() {
         buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    //MENTIR
+    {nombre: "Impostor",
+    texto: "Obtienes una jerga a tu elección, que no puede estar relacionada con tu pasado.",
+    icono: "https://i.imgur.com/iDoIwK0.png",
+    tipo: "talento",
+    id: "3001",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       if(buyTalent(this)) {addToArray(0)}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "M.Rajoy",
+    texto: "Obtienes un 7.5% más de dinero como recompensa de misiones, en forma de dinero en negro.",
+    icono: "https://i.imgur.com/8wCRpuI.png",
+    tipo: "talento",
+    id: "3014",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "S.W. Erdnase",
+    texto: "Puedes lanzar dos dados más en todas tus tiradas para hacer trampas.",
+    icono: "https://i.imgur.com/2s4uBkJ.png",
+    tipo: "talento",
+    id: "3021",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Una flechita",
+    texto: "Obtienes un 10% más de dinero de todas las fuentes, en negro. Además, al comprar cosas con dinero en limpio obtienes un reembolso del 5%, también en negro.",
+    icono: "https://i.imgur.com/mSX60e2.png",
+    tipo: "talento",
+    id: "3034",
+    prereqs: [5, "3014"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    //ELOCUENCIA
+    {nombre: "Popular",
+    texto: "Obtienes una jerga adicional a tu elección.",
+    icono: "https://i.imgur.com/NnLdUkR.png",
+    tipo: "talento",
+    id: "3101",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       if (buyTalent(this)) {addToArray(0)}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Socialite",
+    texto: "Obtienes una jerga adicional a tu elección.",
+    icono: "https://i.imgur.com/oXnb1c7.png",
+    tipo: "talento",
+    id: "3121",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       if (buyTalent(this)) {addToArray(0)}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Sofista",
+    texto: "En discusiones y debates, rebatir el argumento de tu interlocutor de manera efectiva causará estrés.",
+    icono: "https://i.imgur.com/AcUD8wq.png",
+    tipo: "talento",
+    id: "3112",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Orador nato",
+    texto: "Obtienes dos éxitos adicionales en todo lo que hagas frente a un público, excepto en tiradas de Elocuencia.",
+    icono: "https://i.imgur.com/FqXE79N.png",
+    tipo: "talento",
+    id: "3133",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    //LIDERAZGO
+    {nombre: "Ordenar",
+    texto: "Durante las crisis, puedes usar tu acción larga para darle a uno de tus compañeros una acción larga dentro de tu turno.",
+    icono: "https://i.imgur.com/4hY915e.png",
+    tipo: "talento",
+    id: "3202",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Colaborar",
+    texto: "Puedes ayudar a tus compañeros en cualquier tirada, lo que les permite realizar la tirada dos veces y quedarse con el mejor resultado",
+    icono: "https://i.imgur.com/q6wgGjr.png",
+    tipo: "talento",
+    id: "3211",
+    prereqs: [3, undefined, "3213"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Dirigir",
+    texto: "Puedes ayudar a tus compañeros en cualquier tirada, lo que te permite realizar una tirada de Liderazgo y añadir la mitad de éxitos a su tirada.",
+    icono: "https://i.imgur.com/QtUWYHg.png",
+    tipo: "talento",
+    id: "3213",
+    prereqs: [3, undefined, "3211"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Conexiones",
+    texto: "Obtienes la jerga política y ciertos contactos.",
+    icono: "https://i.imgur.com/QtUWYHg.png",
+    tipo: "talento",
+    id: "3223",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       if (buyTalent(this)) {personaje.jergas.push("Política"); updateView()}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Motivar",
+    texto: "Una vez por Crisis puedes motivar a tus compañeros como acción larga, lo que os devuelve 1 de Concentración a todos.",
+    icono: "https://i.imgur.com/5a8biaH.png",
+    tipo: "talento",
+    id: "3224",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "El Plan",
+    texto: "Antes de una escena puedes elaborar El Plan. Mientras os ciñáis al Plan, obtendréis un éxito adicional en vuestras tiradas.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3231",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    //ARTE 
+    {nombre: "Amateur",
+    texto: "Obtienes una especialización artística o picaresca a tu elección",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3301",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       if (buyTalent(this)) {addToArray(1)}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Indie",
+    texto: "Obtienes una especialización (artística o picaresca) o una jerga, a tu elección",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3311",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Auteur",
+    texto: "Obtienes una especialización artística o picaresca a tu elección",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3321",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       if (buyTalent(this)) {addToArray(1)}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Superstar",
+    texto: "Obtienes una especialización (artística o picaresca) o una jerga, a tu elección",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3331",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Pirotecnia",
+    texto: "Lanzar bengalas, bombas de humo o granadas cegadoras cuenta como acción corta en lugar de acción larga.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3313",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Accionismo vienés",
+    texto: "Aumenta el daño bonus de tus críticos de 1 a 1 por cada éxito adicional.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3314",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Fama",
+    texto: "Tu reputación (artística y / o criminal) te precede",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3323",
+    prereqs: [4, "3321"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Savant",
+    texto: "Elige algo que considerar tu forma artística (literalmente cualquier cosa medianamente específica). Obtienes un éxito adicional en ese algo.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3324",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Banksy",
+    texto: "Recuperas un punto de Concentración al causar daños materiales considerables",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3332",
+    prereqs: [5, undefined, "3334"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Pollock",
+    texto: "Recuperas un punto de Concentración al atestar un golpe de gracia con un crítico o un golpe letal",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "3332",
+    prereqs: [5, undefined, "3332"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
     },
     onClick: function() {
         shareEmbed(this)
