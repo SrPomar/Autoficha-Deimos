@@ -1457,7 +1457,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Conexiones",
     texto: "Obtienes la jerga política y ciertos contactos.",
-    icono: "https://i.imgur.com/QtUWYHg.png",
+    icono: "https://i.imgur.com/lmTYYUp.png",
     tipo: "talento",
     id: "3223",
     prereqs: [4],
@@ -1641,8 +1641,785 @@ var  talents = [ //INVESTIGACIÓN
     texto: "Recuperas un punto de Concentración al atestar un golpe de gracia con un crítico o un golpe letal",
     icono: "https://i.imgur.com/eSEBbVD.png",
     tipo: "talento",
-    id: "3332",
+    id: "3334",
     prereqs: [5, undefined, "3332"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    // PILOTAR
+    {nombre: "Spacer",
+    texto: "No sufres efectos psicológicos adversos por pasar mucho tiempo en espacios confinados.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4001",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Bucanero Joviano",
+    texto: "Puedes conseguir e instalar componentes inusuales en tu nave",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4012",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Flyboy",
+    texto: "Aumenta el numero de Gs que puedes resistir antes de sufrir heridas de 3 a 6.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4014",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Membresía al Cockpit Club",
+    texto: "Obtienes una jerga relacionada con tu experiencia como piloto, y acceso al club y al canal de SRN",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4021",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       if (buyTalent(this)) {addToArray(0)}
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Temerario",
+    texto: "Puedes sacarle 90º más de rotación y 2 más de aceleración a cualquier vehículo que estés pilotando, pero a costa de 1 más de energía, e invalidar la garantía.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4032",
+    prereqs: [5, "4012"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Top Gun",
+    texto: "Pilotar y usar armas en un mismo turno no cuenta como dos acciones distintas",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4034",
+    prereqs: [5, "4014"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    // ESQUIVAR
+    {nombre: "Esquivar responsabilidades",
+    texto: "Puedes usar Esquivar para intentar esquivar responsabilidades",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4101",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Esquivar preguntas",
+    texto: "Tiras tres dados adicionales en tus tiradas de Mentir cuando estés esquivando preguntas",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4111",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        lanzarDados(personaje.atr.car, personaje.hab.mentir, "Mentir (con Esquivar Preguntas)", 3)
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Esquivar paparazzi",
+    texto: "Tiras tres dados adicionales en tus tiradas de Sigilo, cuando estés evitando ser visto por una cámara",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4121",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        lanzarDados(personaje.atr.agi, personaje.hab.sigilo, "Sigilo (con Esquivar paparazzi)", 3)
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Moonwalk",
+    texto: "Tras esquivar un ataque, puedes moverte 1 UAM en cualquier dirección de manera gratuita",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4124",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Matrix",
+    texto: "Puedes intentar Esquivar cuando te disparen y no dispongas de cobertura.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4132",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    // REACCIONAR 
+    {nombre: "Piensa rápido",
+    texto: "Tus reacciones durante una Crisis pueden ser cualquier acción, no solamente ataques.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4202",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Siempre atento",
+    texto: "Puedes cambiar tu orientación tras ser objetivo de un ataque enemigo o fallar un disparo de reacción",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4211",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Previsión",
+    texto: "Durante una Crisis puedes reaccionar ante cualquier situación que declares (“Si se rompe el motor…”, “Si mi compañero se aparta…”)",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4213",
+    prereqs: [3, "4202"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Hoplita",
+    texto: "Si te atacan mientras estás vigilando con un arma cuerpo a cuerpo, tu ataque de reacción se producirá antes del ataque enemigo.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4214",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "¡A cubierto!",
+    texto: "Puedes gastar Concentración para intentar lanzarte sobre un aliado que sea objetivo de un ataque. Al hacerlo, pasarás a ser el objetivo del ataque, que podrás intentar esquivar con Reaccionar.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4223",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Centinela",
+    texto: "Puedes gastar un punto de Concentración para poder realizar ataques de reacción frente a todos los enemigos durante una ronda de Crisis",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "4231",
+    prereqs: [5, "4211"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    //AGUANTE
+    {nombre: "¡Solo es un rasguño!",
+    texto: "Si tus heridas caen por debajo de 1, puedes hacer una tirada de Aguante para intentar no morirte en el acto, aunque quedarás incapacitado igualmente.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5003",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Tipo duro",
+    texto: "Puedes realizar tiradas de Aguante para intentar resistir los efectos de granadas cegadoras y de humo, spray pimienta y similares.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5011",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Masoquista",
+    texto: "Recuperas 1 punto de Concentración al recibir daño crítico.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5014",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Pies firmes",
+    texto: "Puedes gastar Concentración para evitar que te empujen o derriben",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5022",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Titán",
+    texto: "Ignora el primer golpe que consiga causarte daño en cada crisis",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5031",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Berserker",
+    texto: "Recuperas 1 punto de Concentración al recibir daño cuerpo a cuerpo.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5034",
+    prereqs: [5, "5014"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    //FUERZA
+    {nombre: "Pase largo",
+    texto: "Puedes aumentar la distancia de lanzamiento máxima de armas arrojadizas y granadas en 3 UAM, pero a costa de -1 éxito en la tirada",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5102",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Rompescudos",
+    texto: "Puedes gastar Concentración para obtener un éxito adicional y aumentar el daño de tus ataques cuerpo a cuerpo en 1.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5104",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Gunny",
+    texto: "Puedes usar ametralladoras u otras armas pesadas similares sin que tengan que estar ancladas al suelo.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5114",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Placar",
+    texto: "Puedes placar como ataque cuerpo a cuerpo, infligiendo la mitad del daño pero derribando al objetivo con un ataque exitoso.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5123",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Héroe de acción",
+    texto: "Puedes empuñar armas a dos manos con una sola mano, pero con un penalizador de -2 éxitos a las tiradas para acertar.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5124",
+    prereqs: [5, "5114"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    // PROPIOCEPCIÓN
+    {nombre: "Automedicación",
+    texto: "Aumenta los PVs temporales y el estrés perdido mediante medicamentos que te administres a ti mismo en 2.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5201",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Conoisseur",
+    texto: "Puedes descubrir los efectos de cualquier droga o medicamento usándola sobre ti mismo.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5212",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Electroquímica",
+    texto: "Consumir drogas duras en combate cuenta como acción corta. Algunas obtendrán el efecto adicional de restaurar Concentración.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5214",
+    prereqs: [3, "5212"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Charla con el cerebro reptiliano",
+    texto: "En ocasiones podrás comunicarte con tu cerebro reptiliano (o tu Id).",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5223",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Time to go to work in the shit factory",
+    texto: "Una vez por turno puedes realizar una tirada de Aguante para recuperar el conocimiento, si estabas sedado o inconsciente.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "5231",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    //INTIMIDAR
+    {nombre: "Esprit de corps",
+    texto: "Empuñar un arma te da un bonus a tu intimidación, que escala con lo mucho que imponga tu arma.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6001",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "La Mirada",
+    texto: "Obtienes dos éxitos adicionales en tus tiradas para intimidar a todo aquél que haya intentado intimidarte y haya fallado.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6014",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        lanzarDados(personaje.atr.vol, personaje.hab.intimidar, "Intimidar (con La Mirada)", 0, 2)
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Terror sin fronteras",
+    texto: "Puedes intentar intimidar objetos inanimados",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6022",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Brutalizar",
+    texto: "Tras atestar un golpe letal, o matar con un arma cuerpo a cuerpo o escopeta puedes intentar intimidar como acción gratuita",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6023",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Too angry to die",
+    texto: "Cuando recibas daño letal, puedes gastar Concentración para sobrevivir con 1 herida.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6031",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    //RESISTIR
+    {nombre: "Cara de poker",
+    texto: "Es más difícil para los demás adivinar tus emociones y pensamientos",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6101",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Yonki de la adrenalina",
+    texto: "Durante las Crisis, si tu estrés está por encima de la mitad del máximo, lanzas un dado más en todas tus tiradas.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6114",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Perspectiva",
+    texto: "Tu vida es una mierda, pero podría ser peor. Reduce todo el estrés recibido en 1, pero nunca por debajo de 1.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6123",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Meditar",
+    texto: "durante las Crisis, puedes pararte a meditar dedicándole todo tu turno. Si no sufres daño hasta el inicio de tu siguiente turno, recuperarás un punto de Concentración y de estrés.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6132",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+
+    //PSIÓNICA
+    {nombre: "Meditar",
+    texto: "Crees que los ruidos en las paredes son goblins espaciales que han venido a comerse tus calcetines. Tu sueño es ligero y te despiertas con cualquier perturbación, pero recuperas menos estrés por las noches.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6201",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Sensibilidad psíquica",
+    texto: "Te percatas automáticamente si alguien está intentando utilizar un poder psíquico sobre ti.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6203",
+    prereqs: [2],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Cazador de brujas",
+    texto: "Puedes lanzar Psiónica para intentar descubrir si alguna persona cercana posee poderes psíquicos.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6212",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Chakras alineados",
+    texto: "Aumenta tu Concentración máxima en 1. Si tras aumentar tu Concentración, ésta no es un número primo, este talento no tiene efecto alguno y pierdes el beneficio, hasta que tu Concentración vuelva a ser Primo-1. (haz clic para recalcular)",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6214",
+    prereqs: [3],
+    coste: 5,
+    onBuy: function() {
+       if (buyTalent(this)) {
+        personaje.sec.concentracion[0] ++
+        if (personaje.sec.concentracion[0] != 5 && personaje.sec.concentracion[0] != 7 && personaje.sec.concentracion[0] != 11) {personaje.sec.concentracion[0]--}
+       }
+    },
+    onClick: function() {
+        personaje.sec.concentracion[0] ++
+        if (personaje.sec.concentracion[0] != 5 && personaje.sec.concentracion[0] != 7 && personaje.sec.concentracion[0] != 11) {personaje.sec.concentracion[0]--}
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Manía persecutoria",
+    texto: "Tus compañeros de tripulación son goblins disfrazados. Oh, Dios. ¿Es eso un calcetín desparejado?. Cuando vayan a emboscarte o tenderte una trampa, puedes sentir que algo va mal. Recibes un éxito automático en todas tus tiradas para tender trampas o fortificar tu ubicación.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6221",
+    prereqs: [4, "6201"],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Investigador paranormal",
+    texto: "Lanzas tres dados adicionales en tus tiradas de Investigación relacionadas con sucesos paranormales. La verdad está ahí fuera.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6224",
+    prereqs: [4],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        lanzarDados(personaje.atr.int, personaje.hab.investigacion, "Investigación (Paranormal)", 3)
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Suertudo",
+    texto: "Tienes un aura probabilística chunga que hace que las cosas salgan a tu favor más a menudo de lo que deberían. Puedes gastar Concentración para repetir tiradas durante crisis, y obtienes también un re-roll por día de juego, no acumulables.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6231",
+    prereqs: [5],
+    coste: 5,
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Skill Issue",
+    texto: "Tu aura probabilística chunga drena la suerte de los demás, con lo que puedes usar tus repeticiones de tirada para obligar a otros a repetir sus tiradas.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "talento",
+    id: "6233",
+    prereqs: [5, "6231"],
     coste: 5,
     onBuy: function() {
        buyTalent(this)
