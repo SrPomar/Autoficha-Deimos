@@ -286,7 +286,7 @@ setInventory = () => {
 }
 
 setDisplay = (id) => {
-    let elementList = ["00","01","02","03", "10","11","12","13", "20","21","22","23", "30","31","32","33", "40","41","42", "50","51","52", "60","61","62", "70", "80", "selector", "inventario", "pasaporte", "notas"]
+    let elementList = ["00","01","02","03", "10","11","12","13", "20","21","22","23", "30","31","32","33", "40","41","42", "50","51","52", "60","61","62", "77", "88", "selector", "inventario", "pasaporte", "notas"]
 
     for (i = 0; i < elementList.length; i++) {
         document.getElementById(elementList[i]).style.display = "none"
