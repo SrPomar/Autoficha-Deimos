@@ -1,3 +1,5 @@
+var globalFlagGeneratedButtons = false;
+
 webhook = (content, ...embeds) => { 
     var mensaje = {
         content: content,
@@ -158,7 +160,7 @@ buyTalent = (object) => { //Comprueba que el personaje tenga los recursos sufici
             if (confirm("¿Deseas adquirir "+object.nombre+"?")) {
                 personaje.mvpp[0] --
                 addToArray(object) //addToArray gestiona la lógica de saber en qué array debería ir
-                if (object.tipo == "arquetipo") {personaje.arquetipo[0]++}
+                if (object.tipo == "arquetipo") {personaje.talentos[0]++}
                 updateView()
                 return true
             }
@@ -316,7 +318,11 @@ updateView = () => {
     document.getElementById("notas").value = personaje.notas
     document.getElementById("inventario").rows[1].cells[1].innerHTML = "<b>"+personaje.inventario[0]+"</b>"
     setInventory();
-    buttonUpdater();
+
+    if (globalFlagGeneratedButtons) {
+        buttonUpdater()
+        arrowUpdater()
+    }
 }
 
 setXP = () => {
