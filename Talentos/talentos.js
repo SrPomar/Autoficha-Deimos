@@ -2627,12 +2627,557 @@ let arquetipos = [
     onClick: function() {
         shareEmbed(this)
     }
-    },
-    ],
+    }],
     
     [//HACKER
+    {nombre: "Datajack",
+    texto: "El hacker puede realizar ataques cuerpo a cuerpo con el Datajack, un arma especial siempre accesible para el hacker (daño 1, 1 ataque por turno). Si el ataque impacta, el hacker podrá intentar un hackeo sobre el objetivo a cambio de un punto de Concentración, pudiendo sabotear o desactivar entidades electrónicas",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8802",
+    prereqs: [0],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
 
-    ],[],[]
+    {nombre: "Gaming mode",
+    texto: "Puedes reducir el tiempo necesario para realizar una acción (de turno a larga, de larga a corta, de corta a gratis) sufriendo una herida en lugar de gastando Concentración",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8810",
+    prereqs: [1],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Ingeniería social",
+    texto: "Además de encontrar vulnerabilidades en sistemas electrónicos, también las encuentras en cerebros. Obtienes dos éxitos adicionales en tus tiradas para mentir cuyo objetivo sea conseguir contraseñas o saltarte sistemas de seguridad",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8814",
+    prereqs: [1],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        lanzarDados(personaje.atr.car, personaje.hab.mentir, "Mentir (con Ingeniería social)", 0, 2)
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Telehack",
+    texto: "El hacker puede lanzar dardos de hackeo remoto (como arma arrojadiza, flecha o con lanzagranadas, daño 1). Los objetivos quedarán con el dardo adherido, permitiendo al Hacker intentar hackeos como si fuera mediante el datajack",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8820",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Barrido inalámbrico",
+    texto: "Puedes gastar 1 Concentración y el turno entero para realizar un barrido de frecuencias inalámbricas, revelando la presencia y ubicación aproximada de dispositivos inalámbricos cercanos",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8822",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Protocolo Tíbet",
+    texto: "Puedes implantar el Protocolo Tibet como acción de hackeo por datajack, desactivando las medidas de seguridad del sistema objetivo y haciendo que se sobrecaliente peligrosamente. El objetivo sufrirá dos heridas por turno hasta que deje de funcionar. Si tiene municiones explosivas encima, detonarán también.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8824",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Funcionamiento autónomo",
+    texto: "Puedes escribir un script (en pseudocódigo, usando funciones como identificarObjetivo(cercania) o lanzarGranada()) para que el robot pueda seguir operando de forma autónoma en caso de no poder recibir las instrucciones del hacker.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8825",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "El Botón Rojo",
+    texto: "Si tu robot es destruido (o a voluntad) puedes pulsar El Botón, sobrecargando el generador termoeléctrico de radioisótopos que alimenta el robot para provocar una pequeña explosión nuclear.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8832",
+    prereqs: [3],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Talento placeholder",
+    texto: "No hace absolutamente nada. Has tenido más de un mes para decirme cosas, como dijiste que harías. Ahora te jodes y bailas.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8834",
+    prereqs: [3],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Modo incógnito",
+    texto: "Tus actividades informáticas ilícitas realizadas a través de un proxy solo pueden ser rastreadas hasta ese proxy",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8835",
+    prereqs: [3],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Telehack autopropulsado",
+    texto: "Puedes incorporar paquetes de telehack en cohetes, misiles y torpedos. En lugar de infligir daño, marcarán el sistema en el que impacten de la nave objetivo permitiendo al hacker intentar hackear la nave como si estuviera usando un datajack",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8840",
+    prereqs: [4, "8820"],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Protocolo Enoshima",
+    texto: "Puedes implantar el Protocolo Enoshima como acción de hackeo por datajack, lo que te permite tomar el control de una entidad electrónica indefinidamente. Puedes tener tantos dispositivos sometidos como quieras, pero solo puedes dar ordenes individualmente",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8844",
+    prereqs: [3],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    }],
+
+    [//MAGNATE
+    {nombre: "Línea de crédito",
+    texto: "Puedes ponerte en contacto con La Empresa para solicitar algo de liquidez con la que cubrir tus gastos. La dificultad depende de la cantidad de dinero y frecuencia con la que se use esta habilidad.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8803",
+    prereqs: [0],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Asistente personal",
+    texto: "Cuentas con un leal asistente personal que te ayudará en lo que pueda: Principalmente llevando tus cosas y gestionando tu agenda, aunque también luchará si es necesario",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8812",
+    prereqs: [1],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Descuento Ejecutivo",
+    texto: "Tienes un 20% de descuento en los productos y servicios ofrecidos por La Empresa.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8815",
+    prereqs: [1],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Micromanaging",
+    texto: "Obtienes el talento Ordenar, de Liderazgo (o un reembolso, si ya lo tenías). Si lo usas sobre tu Asistente personal, éste obtiene también dos éxitos adicionales en su tirada",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8820",
+    prereqs: [2, "8812"],
+    coste: "☆",
+    onBuy: function() {
+        if(buyTalent(this)) {
+            if (personaje.talentos.includes("3202")) {
+                personaje.exp[0] += 5
+            }
+            else {personaje.talentos.push("3202")}
+       }
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Coaching",
+    texto: "Disparar a través de tu asistente personal, o a un objetivo a menos de 2 UAM 'inspirará' al asistente, permitiéndole tirar dos dados más en cualquier tirada hasta el siguiente turno del Magnate",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8821",
+    prereqs: [2, "8812"],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Caddy",
+    texto: "Puedes intercambiar armas con tu asistente como acción corta. Además, tu Asistente obtiene +3 heridas máximas, +2 a la resistencia del traje y +1 a Voluntad.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8832",
+    prereqs: [3, "8812"],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Cómo osas",
+    texto: "Cuando el asistente personal muera en una crisis (incluso si es consecuencia directa del Magnate, jamás admitiría que ha sido culpa suya) el magnate recuperará toda su Concentración y recibirá un éxito adicional en todas sus tiradas hasta el final de la Crisis. Además, todos los ataques realizados contra la persona '''responsable''' de la muerte del asistente infligirán un punto más de daño.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8843",
+    prereqs: [4, "8812"],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "¡Cúbreme!",
+    texto: "Tu bonificación por cobertura aumenta en 1 adicional si hay alguien entre tu atacante y tu. Además, puedes gastar Concentración para redirigir ataques a tu asistente personal",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8824",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Paraíso fiscal",
+    texto: "Obtienes un codiciado pasaporte de Costa de Marfil, que por algún motivo te permite acceder por la vía rápida de todos los puertos espaciales, sin pasar por aduanas. Además, hará que sea mucho más fácil conseguir que las personas ricas e influyentes del lugar te presten su tiempo.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8825",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Too big to fail",
+    texto: "Puedes endeudarte, tanto como quieras, sin consecuencias ni intereses. Eso sí, todo lo que ganéis en dinero limpio desde ese momento (o a través de tu línea de crédito) deberá ir a pagar esa deuda, y no podrás coger otro préstamo hasta que no hayas terminado de pagar ese.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8834",
+    prereqs: [3],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Paga extra",
+    texto: "Puedes darle una propinita a cualquier PNJ, lo que te permite mejorar (o empeorar) el resultado de sus tiradas pagando 100 créditos por éxito añadido o sustraído.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8835",
+    prereqs: [3],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Contribución política",
+    texto: "Puedes 'financiar campañas electorales 😉😉', lo que te permite comprar éxitos adicionales en tus tiradas de Elocuencia, Mentir y Liderazgo. Además, puedes intentar sobornar a enemigos para que no te molesten (o incluso cambien de bando) como acción larga. El coste del soborno dependerá del enemigo",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8845",
+    prereqs: [4],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }}],
+
+
+    [//PERFUMISTA
+    {nombre: "Perfumería metafísica",
+    texto: "Puedes elaborar perfumes con efectos que van más allá de la química convencional. Los perfumes tienen dos efectos distintos según sobre quién se usen, uno sobre la perfumista y otro sobre el resto de entidades con consciencia propia. Además, aprendes a elaborar 'Aurora' Los perfumes pueden usarse como una persona civilizada mediante un difusor o como granadas, destruyendo el perfume y aplicándolo sobre todas las entidades a 3 UAM del punto de impacto. Preparar un frasco de perfume requiere unas cuatro horas, y su potencia se determinará en el momento de la preparación. Puedes tener tantos frascos de perfume preparados como tu Concentración máxima. Cada entidad solo puede estar bajo los efectos de un perfume a la vez",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8802",
+    prereqs: [0],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Aerosolizador",
+    texto: "Puedes usar tus perfumes en aerosol, afectando a todas las entidades en un cono de 90º y 4 UAM.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8810",
+    prereqs: [1],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Fascinación",
+    texto: "Sobre la perfumista proporciona éxitos adicionales en tiradas de Carisma iguales a la mitad de los éxitos obtenidos al elaborar el perfume. Sobre otros, (si no se resiste el efecto) reduce su voluntad en 2 y provoca dos puntos de estrés, además de interrumpir cualquier acción que estuvieran llevando a cabo",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8814",
+    prereqs: [1],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Aroma sutil",
+    texto: "Fuera de una Crisis, es mucho menos probable que los demás perciban que están siendo afectados por tus perfumes y no intenten resistirlos.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8821",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Sublimación optimizada",
+    texto: "Aumenta el alcance de las explosiones de perfume de 3 a 5 UAM de radio.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8822",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Bailarina solitaria",
+    texto: "Sobre la perfumista aumenta la dificultad de ser acertada por disparos en 2 y un éxito adicional en tiradas de sigilo. Sobre los demás (que no lo resistan) reduce su Percepción y su distancia de visión a la mitad",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8824",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Pasión ardiente",
+    texto: "Sobre la perfumista aumenta el daño de ataques desarmados en 2. Sobre enemigos inflige tantas heridas como éxitos obtenidos en la tirada de preparación y aumenta el daño que sufren de ataques de la perfumista en 1",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8825",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Perfume guiado",
+    texto: "Puedes gastar Concentración para guiar tu aerosol, lanzándolo en línea recta hasta 10 UAM, afectando a todos las las entidades en la trayectoria",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8830",
+    prereqs: [3, "8810"],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Deseo fugaz",
+    texto: "Sobre la perfumista crea una ilusión de la perfumista (que podrá hacer algo sencillo como andar en línea recta o fingir leer el periódico). La ilusión puede hacer ruido. Sobre los demás, crea ilusiones animadas de las entidades afectadas, pero no podrán desplazarse",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8834",
+    prereqs: [3],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Ángel",
+    texto: "Todas las entidades afectadas reciben tres éxitos adicionales a todas sus tiradas para resistir efectos psíquicos",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8835",
+    prereqs: [3],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Sirviente de niebla",
+    texto: "Un perfume especial que convoca una criatura gaseosa con cierto grado de consciencia propia. El sirviente cuenta como perfume activo sobre la perfumista y convocarlo siempre destruirá el frasco en el que estaba. No tiene forma directa de causar daño pero la perfumista puede usar sus perfumes a través del sirviente y ver todo lo que esté en un radio de 4 UAM del sirviente.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8840",
+    prereqs: [4],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Secretos profesionales",
+    texto: "Puedes gastar Concentración para potenciar tus perfumes, aumentando en 2 el daño, los éxitos que proporcionan o lo mucho que modifican atributos. Potenciar un perfume siempre romperá el frasco.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8843",
+    prereqs: [4],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+    ]
 ]
 
 var arrows = []
