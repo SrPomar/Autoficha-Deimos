@@ -58,7 +58,21 @@ shareEmbed = (talent) => {
 }
 
 appendArchetype = (int) => {
+    let archArray = arquetipos[int]
 
+    let row = document.getElementById("88").insertRow(); //Programatically generated as to save end users the bother
+    
+    for (i= 0; i < 6; i++) {row.insertCell()}
+
+    for (i = 0; i < archArray.length; i++) {
+        talents.push(archArray[i])
+    }
+
+    generateButtons()
+    generateArrows()
+    buttonUpdater()
+
+    globalFlagGeneratedButtons = true
 }
 
 generateButtons = () => {
@@ -102,7 +116,7 @@ buttonUpdater = () => {
 generateArrows = () => {
 }
 
-ArrowUpdater = () => {
+arrowUpdater = () => {
 
 }
 
@@ -2430,5 +2444,195 @@ var  talents = [ //INVESTIGACIÓN
     },
 ]
 
+
+
+//                  ----- ARQUETIPOS -----
+let arquetipos = [
+    [//ESPÍA
+    {nombre: "Agente encubierta",
+    texto: "Con algo de tiempo, puedes construir una buena identidad falsa. Obtienes un éxito adicional en tus tiradas de Mentir mientras finjas ser tu identidad falsa y dos éxitos adicionales en tus tiradas de Arte para falsificar documentos y credenciales para esa identidad falsa",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8802",
+    prereqs: [0],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Muerte silenciosa",
+    texto: "Causas un punto de daño adicional al usar armas silenciadas o silenciosas",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8810",
+    prereqs: [1],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Actriz de método",
+    texto: "Obtienes temporalmente la jerga que correspondería a tu falsa identidad",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8815",
+    prereqs: [1],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Acechadora",
+    texto: "Generalmente al comienzo de las crisis los enemigos no sabrán que estás ahí. Puedes mantenerte oculta tras cobertura y mediante tiradas de Sigilo si haces algo que te exponga.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8820",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Interrogación sutil",
+    texto: "Puedes realizar tiradas de sigilo para intentar disimular un interrogatorio y hacer que parezca una conversación amigable.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8822",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Fat Larry & Associates",
+    texto: "Puedes encontrar el camión de Fat Larry en cualquier puerto espacial o ciudad importante. Fat Larry compra y vende material ilícito a precios competitivos.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8823",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Vigilancia informática",
+    texto: "Al establecer una nueva identidad falsa obtienes también acceso temporal a un nuevo canal de SRN, a tu elección, relacionado con la nueva identidad.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8824",
+    prereqs: [2],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Nochnyye Vedma",
+    texto: "Tu bonificación de Acechadora también se aplica a todos los cazas u otros vehículos pequeños que pilotes. Fuera de las crisis, obtienes dos éxitos adicionales en tus tiradas de Sigilo para que la nave que pilotas pase desapercibida.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8831",
+    prereqs: [3, "8820"],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Célula encubierta",
+    texto: "Puedes preparar identidades falsas para el resto de tu grupo. Obtendrán el bonus a sus tiradas para Mentir y (lo más importante) no harán peligrar tu tapadera",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8834",
+    prereqs: [3],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Archivo central",
+    texto: "Puedes solicitar copias de los ficheros de personas concretas. Obtener el fichero costará algo de esfuerzo, y tardarás en recibirlo, pero proporcionará información extensa sobre la persona que estés investigando",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8835",
+    prereqs: [3],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Capa y puñal",
+    texto: "Tus ataques cuerpo a cuerpo sobre enemigos que no te hayan detectado serán siempre mortales",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8840",
+    prereqs: [4, "8820"],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+
+    {nombre: "Deep undercover",
+    texto: "Si alguien descubre tu verdadera identidad, se llevará un chasco porque tu verdadera identidad también era una identidad falsa. Podrás crear tu personaje de nuevo, recibiendo un reembolso de todos los PX gastados para que puedas reasignarlos como consideres.",
+    icono: "https://i.imgur.com/eSEBbVD.png",
+    tipo: "arquetipo",
+    id: "8844",
+    prereqs: [4],
+    coste: "☆",
+    onBuy: function() {
+       buyTalent(this)
+    },
+    onClick: function() {
+        shareEmbed(this)
+    }
+    },
+    ],
+    
+    [//HACKER
+
+    ],[],[]
+]
+
 var arrows = []
-generateButtons()
