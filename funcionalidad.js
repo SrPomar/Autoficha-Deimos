@@ -305,6 +305,7 @@ DisplayReceptacle = (id) => {
     }
 
     document.getElementById(id).style.display = "block"
+    arrowUpdater(id)
 }
 
 updateView = () => {
@@ -321,7 +322,6 @@ updateView = () => {
 
     if (globalFlagGeneratedButtons) {
         buttonUpdater()
-        arrowUpdater()
     }
 }
 

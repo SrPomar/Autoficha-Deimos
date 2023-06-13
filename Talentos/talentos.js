@@ -114,10 +114,37 @@ buttonUpdater = () => {
 }
 
 generateArrows = () => {
+    for (i = 0; i < talents.length; i++) {
+        if (talents[i].prereqs[1] != undefined) {
+            let origen = document.getElementById(talents[i].prereqs[1])
+            let destino = document.getElementById(talents[i].id)
+
+            arrows.push([talents[i].prereqs[1].slice(0, 2), new LeaderLine(origen, destino, {color: 'grey', size: '6', hide: true})])
+            console.log(arrows[i][0])
+        }
+
+        else {
+            arrows.push(undefined)
+        }
+    }
 }
 
-arrowUpdater = () => {
+arrowUpdater = (id) => {
+    for (i = 0; i < arrows.length; i++) {
+        if (arrows[i] != undefined) {
+            arrows[i][1].hide()
+        
+            if (arrows[i][0] == id) {
+                arrows[i][1].position()
+                arrows[i][1].show()
 
+                if (personaje.talentos.includes(talents[i].prereqs[1])) {
+                    arrows[i][1].color = "green"
+                }
+                else {arrows[i][1].color = "grey"}
+            }   
+        }
+    }
 }
 
 tooltipHandler = (talent) => {
