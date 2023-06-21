@@ -4,7 +4,7 @@ texto: string
 icono: string (url)
 tipo: "talento" o "arquetipo"
 id: string (4 numeros: atributo - habilidad - columna - fila). Los talentos interdisciplinarios son 77xx y los del arquetipo 88xx
-prerequs: array [nivel mínimo del arquetipo / habilidad correspondiente, string del talento anterior, string del talento que excluye]
+prereqs: array [nivel mínimo del arquetipo / habilidad correspondiente, string del talento anterior, string del talento que excluye]
 coste: int / string. int para coste de xp / "☆" para mvpp
 tooltip: generateTooltip(this)
 onBuy: function() {} - se ejecutará al comprar el talento. debería incluir siempre el buyTalent(this) que devuelve true / false y colgar todo lo demás de un if
@@ -69,7 +69,6 @@ appendArchetype = (int) => {
     }
 
     generateButtons()
-    generateArrows()
     buttonUpdater()
 
     globalFlagGeneratedButtons = true
@@ -113,36 +112,49 @@ buttonUpdater = () => {
     }
 }
 
-generateArrows = () => {
-    for (i = 0; i < talents.length; i++) {
-        if (talents[i].prereqs[1] != undefined) {
-            let origen = document.getElementById(talents[i].prereqs[1])
-            let destino = document.getElementById(talents[i].id)
-
-            arrows.push([talents[i].prereqs[1].slice(0, 2), new LeaderLine(origen, destino, {color: 'grey', size: '6', hide: true})])
-            console.log(arrows[i][0])
-        }
-
-        else {
-            arrows.push(undefined)
-        }
+generateArrows = (id) => {
+    for (i = 0; i < arrows.length; i++) { // Remove all old arrows
+        arrows[i].remove()
     }
-}
 
-arrowUpdater = (id) => {
-    for (i = 0; i < arrows.length; i++) {
-        if (arrows[i] != undefined) {
-            arrows[i][1].hide()
-        
-            if (arrows[i][0] == id) {
-                arrows[i][1].position()
-                arrows[i][1].show()
+    arrows = []
 
-                if (personaje.talentos.includes(talents[i].prereqs[1])) {
-                    arrows[i][1].color = "green"
+    for (i = 0; i < talents.length; i++) {
+        // BASIC PREREQ CHECK
+        if (talents[i].prereqs[1] != undefined) {
+            if (id == talents[i].prereqs[1].slice(0,2)) {
+                let origen = document.getElementById(talents[i].prereqs[1])
+                let destino = document.getElementById(talents[i].id)
+                let rgb = "grey"
+
+                if (personaje.talentos.includes(talents[i].id)) { //Already bought, line can only be white
+                    rgb = "white"
                 }
-                else {arrows[i][1].color = "grey"}
-            }   
+
+                else if (personaje.talentos.includes(talents[i].prereqs[1])) { // Bought the prereq but not this talent
+                    rgb = "green"
+                }
+
+                arrows.push(new LeaderLine(origen, destino, {size: 6, color: rgb}))
+            } 
+        }
+
+        //EXCLUSIVE TALENTS CHECK
+        console.log ("performing exclusive check on "+talents[i].nombre)
+        if (talents[i].prereqs[2] != undefined) {
+            if (id == talents[i].prereqs[2].slice(0,2)) {
+                console.log("found an exclusivity! opc1: "+talents[i].id+" opc2: "+talents[i].prereqs[2])
+                let opc1 = document.getElementById(talents[i].id) // our target
+                let opc2 = document.getElementById(talents[i].prereqs[2]) // the other option
+
+                if (personaje.talentos.includes(talents[i].id)) { // if we have our target
+                    arrows.push (new LeaderLine(opc2, opc1, {color: "red", size: 6}))
+                }
+                else if (personaje.talentos.includes(talents[i].prereqs[2]) == false) { // if we don't have the other option
+                    arrows.push (new LeaderLine(opc1, opc2, {color: "yellow", size: 6, dash: true}))
+                }
+            }
+            //The inverse case (we do have the other option) is solved before / after in another iteration of the for loop
         }
     }
 }
@@ -456,7 +468,7 @@ var  talents = [ //INVESTIGACIÓN
     icono: "https://i.imgur.com/r81KcU4.png",
     tipo: "talento",
     id: "0231",
-    prereqs: [5, undefined, "0243"],
+    prereqs: [5, undefined, "0233"],
     coste: 5,
     onBuy: function() {
         buyTalent(this)
@@ -471,7 +483,7 @@ var  talents = [ //INVESTIGACIÓN
     icono: "https://i.imgur.com/XXHoWoJ.png",
     tipo: "talento",
     id: "0233",
-    prereqs: [5, undefined, "0241"],
+    prereqs: [5, undefined, "0231"],
     coste: 5,
     onBuy: function() {
         buyTalent(this)
@@ -1545,7 +1557,7 @@ var  talents = [ //INVESTIGACIÓN
     //ARTE 
     {nombre: "Amateur",
     texto: "Obtienes una especialización artística o picaresca a tu elección",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/rBe6tch.png",
     tipo: "talento",
     id: "3301",
     prereqs: [2],
@@ -1560,7 +1572,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Indie",
     texto: "Obtienes una especialización (artística o picaresca) o una jerga, a tu elección",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/rpV6P7u.png",
     tipo: "talento",
     id: "3311",
     prereqs: [3],
@@ -1590,7 +1602,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Superstar",
     texto: "Obtienes una especialización (artística o picaresca) o una jerga, a tu elección",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/z9WrPlX.png",
     tipo: "talento",
     id: "3331",
     prereqs: [5],
@@ -1605,7 +1617,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Pirotecnia",
     texto: "Lanzar bengalas, bombas de humo o granadas cegadoras cuenta como acción corta en lugar de acción larga.",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/KdwO73F.png",
     tipo: "talento",
     id: "3313",
     prereqs: [3],
@@ -1620,7 +1632,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Accionismo vienés",
     texto: "Aumenta el daño bonus de tus críticos de 1 a 1 por cada éxito adicional.",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/rMOuPQo.png",
     tipo: "talento",
     id: "3314",
     prereqs: [3],
@@ -1635,7 +1647,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Fama",
     texto: "Tu reputación (artística y / o criminal) te precede",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/C2Z5QZM.png",
     tipo: "talento",
     id: "3323",
     prereqs: [4, "3321"],
@@ -1650,7 +1662,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Savant",
     texto: "Elige algo que considerar tu forma artística (literalmente cualquier cosa medianamente específica). Obtienes un éxito adicional en ese algo.",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/FxBD7a5.png",
     tipo: "talento",
     id: "3324",
     prereqs: [4],
@@ -1665,7 +1677,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Banksy",
     texto: "Recuperas un punto de Concentración al causar daños materiales considerables",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/BKJhiVT.png",
     tipo: "talento",
     id: "3332",
     prereqs: [5, undefined, "3334"],
@@ -1680,7 +1692,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Pollock",
     texto: "Recuperas un punto de Concentración al atestar un golpe de gracia con un crítico o un golpe letal",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/kGTvXMk.png",
     tipo: "talento",
     id: "3334",
     prereqs: [5, undefined, "3332"],
