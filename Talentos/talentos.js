@@ -1587,7 +1587,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Auteur",
     texto: "Obtienes una especialización artística o picaresca a tu elección",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/PYZFjO7.png",
     tipo: "talento",
     id: "3321",
     prereqs: [4],
@@ -1709,7 +1709,7 @@ var  talents = [ //INVESTIGACIÓN
     // PILOTAR
     {nombre: "Spacer",
     texto: "No sufres efectos psicológicos adversos por pasar mucho tiempo en espacios confinados.",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/dzvzSSf.png",
     tipo: "talento",
     id: "4001",
     prereqs: [2],
@@ -1724,7 +1724,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Bucanero Joviano",
     texto: "Puedes conseguir e instalar componentes inusuales en tu nave",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/4aNdOIq.png",
     tipo: "talento",
     id: "4012",
     prereqs: [3],
@@ -1739,7 +1739,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Flyboy",
     texto: "Aumenta el numero de Gs que puedes resistir antes de sufrir heridas de 3 a 6.",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/qS8VGgp.png",
     tipo: "talento",
     id: "4014",
     prereqs: [3],
@@ -1752,9 +1752,9 @@ var  talents = [ //INVESTIGACIÓN
     }
     },
 
-    {nombre: "Membresía al Cockpit Club",
+    {nombre: "Membresía del Cockpit Club",
     texto: "Obtienes una jerga relacionada con tu experiencia como piloto, y acceso al club y al canal de SRN",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/76v8iyA.png",
     tipo: "talento",
     id: "4021",
     prereqs: [4],
@@ -1769,7 +1769,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Temerario",
     texto: "Puedes sacarle 90º más de rotación y 2 más de aceleración a cualquier vehículo que estés pilotando, pero a costa de 1 más de energía, e invalidar la garantía.",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/rrB8kqB.png",
     tipo: "talento",
     id: "4032",
     prereqs: [5, "4012"],
@@ -1784,7 +1784,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Top Gun",
     texto: "Pilotar y usar armas en un mismo turno no cuenta como dos acciones distintas",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/WkQtw8N.png",
     tipo: "talento",
     id: "4034",
     prereqs: [5, "4014"],
@@ -1801,7 +1801,7 @@ var  talents = [ //INVESTIGACIÓN
     // ESQUIVAR
     {nombre: "Esquivar responsabilidades",
     texto: "Puedes usar Esquivar para intentar esquivar responsabilidades",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/H6DNkX4.png",
     tipo: "talento",
     id: "4101",
     prereqs: [2],
@@ -1816,7 +1816,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Esquivar preguntas",
     texto: "Tiras tres dados adicionales en tus tiradas de Mentir cuando estés esquivando preguntas",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/RUINpH7.png",
     tipo: "talento",
     id: "4111",
     prereqs: [3],
@@ -1832,7 +1832,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Esquivar paparazzi",
     texto: "Tiras tres dados adicionales en tus tiradas de Sigilo, cuando estés evitando ser visto por una cámara",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/VkEKSGe.png",
     tipo: "talento",
     id: "4121",
     prereqs: [4],
@@ -1848,7 +1848,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Moonwalk",
     texto: "Tras esquivar un ataque, puedes moverte 1 UAM en cualquier dirección de manera gratuita",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/rR96m9k.png",
     tipo: "talento",
     id: "4124",
     prereqs: [4],
@@ -1863,7 +1863,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Matrix",
     texto: "Puedes intentar Esquivar cuando te disparen y no dispongas de cobertura.",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/FpC4xgf.png",
     tipo: "talento",
     id: "4132",
     prereqs: [5],
@@ -1880,7 +1880,7 @@ var  talents = [ //INVESTIGACIÓN
     // REACCIONAR 
     {nombre: "Piensa rápido",
     texto: "Tus reacciones durante una Crisis pueden ser cualquier acción, no solamente ataques.",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/Ri5hfqb.png",
     tipo: "talento",
     id: "4202",
     prereqs: [2],
@@ -1895,7 +1895,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Siempre atento",
     texto: "Puedes cambiar tu orientación tras ser objetivo de un ataque enemigo o fallar un disparo de reacción",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/Sqjux3f.png",
     tipo: "talento",
     id: "4211",
     prereqs: [3],
@@ -1910,7 +1910,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Previsión",
     texto: "Durante una Crisis puedes reaccionar ante cualquier situación que declares (“Si se rompe el motor…”, “Si mi compañero se aparta…”)",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/WDLk0NI.png",
     tipo: "talento",
     id: "4213",
     prereqs: [3, "4202"],
@@ -1925,7 +1925,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Hoplita",
     texto: "Si te atacan mientras estás vigilando con un arma cuerpo a cuerpo, tu ataque de reacción se producirá antes del ataque enemigo.",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/hSZ0D8b.png",
     tipo: "talento",
     id: "4214",
     prereqs: [3],
@@ -1940,7 +1940,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "¡A cubierto!",
     texto: "Puedes gastar Concentración para intentar lanzarte sobre un aliado que sea objetivo de un ataque. Al hacerlo, pasarás a ser el objetivo del ataque, que podrás intentar esquivar con Reaccionar.",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/ziLWTws.png",
     tipo: "talento",
     id: "4223",
     prereqs: [4],
@@ -1955,7 +1955,7 @@ var  talents = [ //INVESTIGACIÓN
 
     {nombre: "Centinela",
     texto: "Puedes gastar un punto de Concentración para poder realizar ataques de reacción frente a todos los enemigos durante una ronda de Crisis",
-    icono: "https://i.imgur.com/eSEBbVD.png",
+    icono: "https://i.imgur.com/S68ZZsF.png",
     tipo: "talento",
     id: "4231",
     prereqs: [5, "4211"],
