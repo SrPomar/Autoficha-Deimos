@@ -198,7 +198,9 @@ boldStats = () => { //Bolds numbers in statblock tables
         var statname = Object.entries(personaje.atr)[i][0];
 
         for (j = 1; j <= statnum; j++) { // Changes numbers to bold in stat table
-            document.getElementById((statname+"tab")).rows[0].cells[j].innerHTML = '<b>'+j+'</b>'
+           var target = document.getElementById((statname+"tab")).rows[0].cells[j]
+           target.style.color = "#32c739";
+           target.style.fontWeight = "900"
         }
 
         if (statname != "ref" && statname != "fis" && statname != "vol") {var skillcount = 4}
@@ -209,7 +211,9 @@ boldStats = () => { //Bolds numbers in statblock tables
             currentskill ++;
         
             for (l = 1; l <= skillnum; l++) {
-                document.getElementById((statname+"skills")).rows[k].cells[l].innerHTML = '<b>'+l+'</b>'
+                var target = document.getElementById((statname+"skills")).rows[k].cells[l]
+                target.style.color = "#32c739";
+                target.style.fontWeight = "900"
             }
         }
     }
